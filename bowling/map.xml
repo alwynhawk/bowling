@@ -1,7 +1,7 @@
 <map proto="1.4.2">
 <name>Bowling For Goblins</name>
 <version>1</version>
-<objective>Avoid the gutters to knock over the 10 Goblins in the time limit! 0</objective>
+<objective>Avoid the gutters to knock over the 01 Goblins in the time limit!</objective>
 <time result="gutter">5m</time>
 <authors>
      <author uuid="38b43ab9-c689-4b93-830e-c24819ce2228"/> <!-- Okalwyn -->
