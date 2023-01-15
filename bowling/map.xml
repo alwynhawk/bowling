@@ -1,0 +1,158 @@
+<map proto="1.4.2">
+<name>Bowling For Goblins</name>
+<version>1</version>
+<objective>Avoid the gutters to knock over the 1000 Goblins in the time limit!</objective>
+<time result="gutter">5m</time>
+<authors>
+     <author uuid="38b43ab9-c689-4b93-830e-c24819ce2228"/> <!-- Okalwyn -->
+     <author uuid="f8119f7d-fdb2-4e56-9d85-899c66d8e16e"/> <!-- BuckyBarrTV -->
+     <author uuid="25a0048f-d105-4a57-b2f6-2ee88b87d684"/> <!-- WilOCN -->
+     <author uuid="4faf501d-f965-4f07-887e-24cd66a4f7b0"/> <!-- ApplePies -->
+</authors>
+<broadcasts>
+    <tip after="1s" filter="only-gutter">`bShoot the attackers and prevent them from mining your friends "Goblins heads"</tip>
+    <tip after="1s" filter="only-ball">`bAvoid the gutters and mine the Goblin heads to win.</tip>
+</broadcasts>
+<teams>
+    <team id="gutter" color="dark gray" max="2" max-overill="3">Gutter</team>
+    <team id="ball" color="red" max="6" max-overill="9" plural="true">Bowling Balls</team>
+</teams>
+<itemkeep>
+    <item>emerald</item>
+    <item>leather boots</item>
+    <item>shears</item>
+</itemkeep>
+<disabledamage>
+    <damage>fall</damage>
+</disabledamage>
+<itemremove>
+    <item>wool:14</item>
+</itemremove>
+<spawns>
+    <spawn team="gutter" kit="gutter-kit">
+        <region yaw="180" pitch="-6"><cuboid min="38,13.5,-5" max="-35,13.5,-2"/></region>
+        <region yaw="0" pitch="-6"><cuboid min="38,6,-10" max="44,6,-8"/></region>
+    </spawn>
+    <spawn team="ball" kit="ball-kit" yaw="90">
+        <region><point>-38.5,14,4.5</point></region>
+    </spawn>
+    <default kit="all" yaw="-90">
+        <region><cuboid min="-42.5,27,4.5" max="-42.5,27,4.5"/></region>
+    </default>
+</spawns>
+<kits>
+    <kit id="all">
+        <potion duration="oo">night vision</potion>
+        <potion duration="oo">saturation</potion>
+    </kit>
+    <kit id="ball-kit" parents="all" force="true">
+        <potion duration="oo" amplifier="10">resistance</potion>
+        <potion duration="oo" amplifier="1">slow_digging</potion>
+        <potion duration="oo" amplifier="-4">health boost</potion>
+    </kit>
+    <kit id="akb-ball-kit">
+        <attribute amount="1">generic.knockbackResistance</attribute>
+    </kit>
+    <kit id="gutter-kit" parents="all">
+        <potion duration="oo" amplifier="10">resistance</potion>
+        <walk-speed>2.5</walk-speed>
+        <item slot="0" name="`r`bSpin" enchantment="ARROW_KNOCKBACK:2;ARROW_INFINITE" unbreakable="true">Bow</item>
+        <item slot="1" amount="1">Arrow</item>
+        <health>20</health>
+        <game-mode>adventure</game-mode>
+    </kit>
+    <kit id="emerald-kit" force="true">
+        <item>emerald</item>
+    </kit>
+</kits>
+
+
+<regions>
+    <apply block="melon_block" />
+    <apply message="Destroy the Melon!" early-warning="true"  block="notSkull" />
+    <apply lend-kit="akb-ball-kit">
+        <region>
+            <rectangle min="26,-2" max="35,11"/>
+        </region>
+    </apply>
+    <apply kit="emerald-kit">
+        <region>
+            <cuboid min="45,5.5,-6" max="48,3,5"/>
+        </region>
+    </apply>
+    <apply enter="denyGutter">
+        <region>
+            <above y="7" />
+        </region>
+    </apply>
+    <apply enter="denyGutter">
+        <region>
+            <rectangle min="-34,-7" max="45,6"/>
+        </region>
+    </apply>
+</regions>
+
+
+
+
+<destroyables owner="gutter" materials="melon_block" completion="100%" sparks="true" show-progress="true">
+    <destroyable name="Pins">
+        <region><cuboid min="35,5,3" max="43,7,-5"/></region>
+    </destroyable>
+</destroyables>
+<falling-blocks>
+    <rule>
+        <filter>
+            <material>skull</material>
+        </filter>
+    </rule>
+</falling-blocks><!--
+<blockdrops>
+    <rule>
+        <filter>
+            <material>melon_block</material>
+        </filter>
+        <replacement>wood step:1</replacement>
+        <drops/>
+    </rule>
+</blockdrops>-->
+<filters>
+    <material id="melon_block">103</material>
+    <not id="notSkull">
+        <material>skull</material>
+    </not>
+    <team id="only-gutter">gutter</team>
+    <team id="only-ball">ball</team>
+    <not id="denyGutter">
+        <team>gutter</team>
+    </not>
+</filters>
+
+
+<portals>
+
+    <portal x="@-38.5" y="@14" z="@4.5" filter="only-ball">
+        <region><cuboid min="35,12,-1" max="38,13,10"/></region>
+    </portal>
+
+    <portal x="@6.5" z="@-8.5" filter="only-gutter">
+        <region><cuboid min="8,5,10" max="5,6,9"/></region>
+    </portal>
+
+    <portal x="@6.5" z="@7.5" filter="only-gutter">
+        <region><cuboid min="8,5,-11" max="5,6,-10"/></region>
+    </portal>
+
+    <portal x="@-38.5" y="@24" z="@4.5" pitch="@0" yaw="@-90" filter="only-ball">
+        <region><cuboid min="38,12.3,-1" max="35,12.4,10"/></region>
+    </portal>
+
+
+</portals>
+
+
+
+<gamerules>
+    <naturalRegeneration>false</naturalRegeneration>
+</gamerules>
+</map>
