@@ -26,7 +26,7 @@
 	<damage>fall</damage>
 </disabledamage>
 <itemremove>
-    <item>wool:14</item>
+    <item>melon_block</item>
 </itemremove>
 <spawns>
 	<spawn team="gutter" kit="gutter-kit">
@@ -63,7 +63,12 @@
     </kit>
     <kit id="emerald-kit" force="true">
     	<item>emerald</item>
+
     </kit>
+        <kit id="force-kill" force="true">
+        <health>1</health>
+    </kit>
+
 </kits>
 
 
@@ -135,18 +140,17 @@
 		<region><cuboid min="35,12,-1" max="38,13,10"/></region>
 	</portal>
 
-	<portal x="@6.5" z="@-8.5" filter="only-gutter">
-		<region><cuboid min="8,5,10" max="5,6,9"/></region>
+	<portal x="@-38.5" y="@14" z="@4.5" filter="only-ball">
+		<region><cuboid min="3,12.5,1.5" max="-35,13,2"/></region>
 	</portal>
 
-	<portal x="@6.5" z="@7.5" filter="only-gutter">
-		<region><cuboid min="8,5,-11" max="5,6,-10"/></region>
+	<portal x="@-38.5" y="@14" z="@4.5" filter="only-ball">
+		<region><cuboid min="38,12.5,11" max="-35,13,14"/></region>
 	</portal>
 
-	<portal x="@-38.5" y="@24" z="@4.5" pitch="@0" yaw="@-90" filter="only-ball">
+	<!-- <portal x="@-38.5" y="@24" z="@4.5" pitch="@0" yaw="@-90" filter="only-ball">
 		<region><cuboid min="38,12.3,-1" max="35,12.4,10"/></region>
-	</portal>
-
+	</portal> -->
 
 </portals>
 
