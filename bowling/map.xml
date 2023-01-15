@@ -1,6 +1,6 @@
 <map proto="1.4.2">
 <name>Bowling For Goblins</name>
-<version>1</version>
+<version>1.1</version>
 <objective>Avoid the gutters to knock over the 01 Goblins in the time limit!</objective>
 <time result="gutter">5m</time>
 <authors>
