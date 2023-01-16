@@ -1,6 +1,6 @@
 <map proto="1.4.2">
 <name>Bowling For Goblins</name>
-<version>1.3</version>
+<version>1.4</version>
 <objective>Avoid the gutters to knock over the 10 Goblins in the time limit! 0</objective>
 <time result="gutter">5m</time>
 <authors>
@@ -97,7 +97,7 @@
         </region>
     </apply>
 
-     <below id="lava-region" y=""/> 
+     <below id="lava-region" y="14"/> 
      <apply kit="force-kill" region="lava-region"/>
     
 </regions>
@@ -169,3 +169,12 @@
 	<naturalRegeneration>false</naturalRegeneration>
 </gamerules>
 </map>
+
+<!--
+
+/loadnewmaps
+/sn bowling
+/cycle 0
+/start 0
+
+-->
