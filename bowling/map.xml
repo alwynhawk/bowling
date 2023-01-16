@@ -1,6 +1,6 @@
 <map proto="1.4.2">
 <name>Bowling For Goblins</name>
-<version>1.2</version>
+<version>1.1</version>
 <objective>Avoid the gutters to knock over the 10 Goblins in the time limit! 0</objective>
 <time result="gutter">5m</time>
 <authors>
@@ -97,7 +97,7 @@
         </region>
     </apply>
 
-     <below id="lava-region" y="14"/> 
+     <below id="lava-region" y=""/> 
      <apply kit="force-kill" region="lava-region"/>
     
 </regions>
@@ -151,6 +151,10 @@
 
 	<portal x="@-38.5" y="@14" z="@4.5" filter="only-ball">
 		<region><cuboid min="38,12.5,11" max="-35,13,14"/></region>
+	</portal>
+
+    <portal x="@-38.5" y="@14" z="@4.5" filter="only-ball">
+		<region><cuboid min="38,12.5,-5" max="-35,13,-3"/></region>
 	</portal>
 
 	<!-- <portal x="@-38.5" y="@24" z="@4.5" pitch="@0" yaw="@-90" filter="only-ball">
