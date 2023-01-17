@@ -1,6 +1,6 @@
 <map proto="1.4.2">
 <name>Bowling For Goblins</name>
-<version>1.4</version>
+<version>1.5</version>
 <objective>Avoid the gutters to knock over the 10 Goblins in the time limit! 0</objective>
 <time result="gutter">5m</time>
 <authors>
@@ -33,7 +33,7 @@
 		<region yaw="180" pitch="-6"><cuboid min="38,13.5,-5" max="-35,13.5,-2"/></region>
 		<region yaw="0" pitch="-6"><cuboid min="38,6,-10" max="44,6,-8"/></region>
 	</spawn>
-	<spawn team="ball" kit="ball-kit" yaw="90">
+	<spawn team="ball" kit="ball-kit" yaw="-90">
 		<region><point>-38.5,14,4.5</point></region>
 	</spawn>
 	<default kit="all" yaw="-90">
@@ -66,7 +66,7 @@
 
     </kit>
         <kit id="force-kill" force="true">
-        <health>1</health>
+        <health>0</health>
     </kit>
 
 </kits>
@@ -97,9 +97,9 @@
         </region>
     </apply>
 
-     <below id="lava-region" y="14"/> 
-     <apply kit="force-kill" region="lava-region"/>
-    
+    <cuboid id="lava-region" min="35,0,11" max="-36,14,-2"/>
+    <apply kit="force-kill" region="lava-region"/>
+     
 </regions>
 
 
