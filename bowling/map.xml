@@ -1,6 +1,6 @@
 <map proto="1.4.2">
 <name>Bowling For Goblins</name>
-<version>1.5</version>
+<version>1.6</version>
 <objective>Avoid the gutters to knock over the 10 Goblins in the time limit! 0</objective>
 <time result="gutter">5m</time>
 <authors>
@@ -46,9 +46,9 @@
         <potion duration="oo">saturation</potion>
     </kit>
     <kit id="ball-kit" parents="all" force="true">
-        <potion duration="oo" amplifier="10">resistance</potion>
+        <!-- <potion duration="oo" amplifier="10">resistance</potion> -->
         <potion duration="oo" amplifier="1">slow_digging</potion>
-        <potion duration="oo" amplifier="-4">health boost</potion>
+        <!-- <potion duration="oo" amplifier="-4">health boost</potion> -->
     </kit>
     <kit id="akb-ball-kit">
     	<attribute amount="1">generic.knockbackResistance</attribute>
