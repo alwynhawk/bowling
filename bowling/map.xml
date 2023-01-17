@@ -66,7 +66,7 @@
 
     </kit>
         <kit id="force-kill" force="true">
-        <health>0</health>
+        <health>1</health>
     </kit>
 
 </kits>
