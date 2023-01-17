@@ -1,6 +1,6 @@
 <map proto="1.4.2">
 <name>Bowling For Goblins</name>
-<version>1.6</version>
+<version>1.7</version>
 <objective>Avoid the gutters to knock over the 10 Goblins in the time limit! 0</objective>
 <time result="gutter">5m</time>
 <authors>
@@ -66,7 +66,7 @@
 
     </kit>
         <kit id="force-kill" force="true">
-        <health>1</health>
+        <health>2</health>
     </kit>
 
 </kits>
